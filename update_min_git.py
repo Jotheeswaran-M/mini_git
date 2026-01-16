@@ -1,31 +1,39 @@
-
 def file_opener():
     with open('file.txt') as f:
         content=""
+        count = 0
         for i in f:
             content+=i
+            count+=1
             # print(i,end="")
-        return content
+        return content,count
 
-f1 = file_opener()
-
+f1,count1 = file_opener()
+# print(f1,count1)
 
 def file_opener_new():
     with open('file1.txt') as f:
         content=""
+        count = 0
         for j in f:
             # print(j,end="")
             content+=j
+            count+=1
             # return j
-        return content
+        return content,count
 
-f2 = file_opener_new()
-# print(f2)
+f2,count2 = file_opener_new()
+# print(f2,count2)
 
 if f1==f2:
     print(f1)
+elif (f2==None or f2 =="" ) and count1>count2:
+    print(f1)
+elif (f1==None or f1 =="" ) and count1<count2:
+    print(f2)
 else:
     print(f2)
+
 
 
 # def old_file():
